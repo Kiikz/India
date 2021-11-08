@@ -32,3 +32,12 @@ var elMsg = document.getElementById('feedback');  // Element to hold message
 el.addEventListener('focus', tipUsername, false); // focus call tipUsername()
 el.addEventListener('blur', checkUsername, false);// blur call checkUsername()
 
+function logSubmit(event) {
+  log.textContent = `Form Submitted! Time stamp: ${event.timeStamp}`;
+  event.preventDefault();
+}
+
+const form = document.getElementById('form');
+const log = document.getElementById('log');
+form.addEventListener('submit', logSubmit);
+
